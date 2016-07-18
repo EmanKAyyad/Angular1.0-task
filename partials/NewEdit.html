@@ -1,1 +1,25 @@
-<h2>Nmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm</h2>
+<header ng-controller="headerController">
+    <div>
+        <a href="#"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
+        <span id="title">data import - new</span>
+    </div>
+    <div>
+        <a ng-click="refreshPage()"><span class="glyphicon glyphicon-refresh" ></span></a>
+    </div>
+    <p class="clearfix"></p>
+</header>
+<section id="newEdit" ng-controller="NewEditController">
+    <div ng-click="showPartition()"  class="insert-partition">
+        <h2 >General information</h2>
+        <input type="text" value="name" ng-model="name" ng-show="{{flag}}" placeholder="Article name"/>
+        <input type="text" value="author" ng-model="author" placeholder="Author name"/>
+        <input type="text" value="category" ng-model="category" placeholder="Article category"/>
+        <input type="text" value="state" ng-model="state" placeholder="Article state"/>
+        <div ng-controller="AppCtrl" style="padding: 40px;" ng-cloak="" class="datepickerdemoBasicUsage" ng-app="MyApp">
+            <md-content>
+                <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
+            </md-content>
+        </div>
+    </div>
+    <p class="clearfix"></p>
+</section>

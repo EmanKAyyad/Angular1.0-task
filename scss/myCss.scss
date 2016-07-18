@@ -2,21 +2,27 @@
     Created on : Jul 18, 2016, 12:01:05 PM
     Author     : Eman Khalifa
 */
+/*includes*/
 
+@import'../bower_components/angular-material/angular-material.scss';
 /*global variables*/
 
-$mainblue:#003399;
-$backgroundGrey:#eee;
-$orange:#FF9933;
+$mainblue:#244366;
+$backgroundGrey:#fafafa;
+$lightsimon: #FFADA6;
+$darksimon: #D28169;
 $bluishGrey:#99CCCC;
+$darkbabyblue: #A6D0FF;
 
 p,h2{
     margin: 0;
 }
 body{
-    width: 60%;
+    width: 60% !important;
     margin: 20px auto 0;
     font-family: sans-serif;
+    position: relative !important;
+        top: 0 !important;
 
 }
 header{
@@ -43,9 +49,69 @@ header span{
     color: #fff;
 }
 
-div[ng-view]{
-    height: 600px;
+section{
     background-color: $backgroundGrey;
     padding: 20px 10px;
 }
+section#newEdit{
+    div.insert-partition{
+        width: 50%;
+        margin: 20px auto 0;
+        background-color: #fff;
+        padding: 20px 10px;
+        box-shadow: 0 0 10px #ccc;
 
+        h2{
+            color: $bluishGrey;
+            text-align: center;
+        }
+
+        input{
+            color: $mainblue;
+            width: 70%;
+            display: block;
+            margin: 0 auto;
+            border: none;
+            border-bottom: 1px solid $bluishGrey;
+            background-color: #fff;
+            padding:20px 0;
+            &:focus{
+                outline-color: $bluishGrey;
+            }
+        }
+        ::-webkit-input-placeholder {
+            color: $bluishGrey;
+        }
+
+        :-moz-placeholder { /* Firefox 18- */
+            color: $bluishGrey;  
+        }
+
+        ::-moz-placeholder {  /* Firefox 19+ */
+            color: $bluishGrey;  
+        }
+
+        :-ms-input-placeholder {  
+            color: $bluishGrey;  
+        }
+    }
+}
+
+
+/*datepicker rules*/
+.datepickerdemoBasicUsage {
+    width: 100%;
+    margin: 0 auto;
+
+
+}
+.datepickerdemoBasicUsage md-content {
+    padding-left: 10px;
+}
+.datepickerdemoBasicUsage .validation-messages {
+    font-size: 12px;
+    color: #dd2c00;
+    margin: 10px 0 0 25px; }
+.md-datepicker-input-container{
+    border-bottom: none;
+}
