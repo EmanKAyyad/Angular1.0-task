@@ -1,5 +1,8 @@
-/nbproject/
-/bower_components
 
-!bower_components/angular/angular.min.js
-!bower_components/angular-route/angular-route.min.js
+# Created by https://www.gitignore.io/api/bower
+
+### Bower ###
+bower_components
+.bower-cache
+.bower-registry
+.bower-tmp
