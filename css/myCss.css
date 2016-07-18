@@ -1,0 +1,36 @@
+/* 
+    Created on : Jul 18, 2016, 12:01:05 PM
+    Author     : Eman Khalifa
+*/
+/*global variables*/
+p, h2 {
+  margin: 0; }
+
+body {
+  width: 60%;
+  margin: 20px auto 0;
+  font-family: sans-serif; }
+
+header {
+  font-size: 1.4em;
+  padding: 20px;
+  background-color: #003399; }
+  header div:first-of-type {
+    float: left; }
+    header div:first-of-type span#title {
+      padding-left: 10px;
+      text-transform: capitalize; }
+  header div:last-of-type {
+    float: right; }
+    header div:last-of-type a {
+      cursor: pointer; }
+
+header span {
+  color: #fff; }
+
+div[ng-view] {
+  height: 600px;
+  background-color: #eee;
+  padding: 20px 10px; }
+
+/*# sourceMappingURL=myCss.css.map */
