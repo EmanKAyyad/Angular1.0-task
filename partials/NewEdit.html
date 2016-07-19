@@ -12,7 +12,7 @@
     <div ng-animate="'animate'"  class="insert-partition">
         <h2  ng-click="toggle($event)" >General information</h2>
         <span ng-hide="lamp" > {{name}}  {{author}}  {{category}}  {{state}}</span>
-        <form>
+
             <input type="text" value="name" ng-model="name"  placeholder="Article name"/>
             <input type="text" value="author" ng-model="author" placeholder="Author name"/>
             <input type="text" value="category" ng-model="category" placeholder="Article category"/>
@@ -23,7 +23,7 @@
                 </md-content>
             </div>
             <a ng-click="newEditRecord()"><span class="glyphicon glyphicon-ok"></span></a>
-        </form>
+
     </div>
     <div ng-animate="'animate'"  class="insert-partition">
         <h2  ng-click="toggle($event)" >Description</h2>
@@ -40,7 +40,6 @@
 <section class="buttons">
     <div>
         <a id="backBtn" href="#/"><span class="glyphicon glyphicon-backward"></span></a>
-        <a id="pencil"><span class="glyphicon glyphicon-pencil"></span></a>
         <p class="clearfix"></p>
     </div>
 </section>

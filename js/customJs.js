@@ -25,7 +25,7 @@ myapp.config(function ($routeProvider) {
 
 // getdate
 
-myapp.service('getDate',function(){
+myapp.service('getDate', function () {
     this.date = '';
 });
 
@@ -36,10 +36,10 @@ myapp.controller('headerController', ['$scope', '$route', '$log', function ($sco
         };
     }]);
 
-myapp.controller('NewEditController', ['$scope','localStorageService','getDate', function ($scope,localStorageService,getDate) {
+myapp.controller('NewEditController', ['$scope', 'localStorageService', 'getDate', function ($scope, localStorageService, getDate) {
 
         $scope.lamp = false;
-        $scope.mydate =getDate.date;
+        $scope.mydate = getDate.date;
         $scope.toggle = function ($event) {
 //            console.log($event.target.parentNode);
             var allpartitions = document.getElementsByClassName('insert-partition');
@@ -47,7 +47,7 @@ myapp.controller('NewEditController', ['$scope','localStorageService','getDate',
 
             if ($scope.lamp) {
                 $scope.lamp = false;
-                partition.style.height = "80px";
+                partition.style.height = "65px";
                 partition.style.overflow = "hidden";
                 partition.style.width = "45%";
 
@@ -55,7 +55,7 @@ myapp.controller('NewEditController', ['$scope','localStorageService','getDate',
             else {
                 $scope.lamp = true;
                 for (var i = 0; i < allpartitions.length; i++) {
-                    allpartitions[i].style.height = "80px";
+                    allpartitions[i].style.height = "65px";
                     allpartitions[i].style.overflow = "hidden";
                     allpartitions[i].style.width = "45%";
 
@@ -77,14 +77,27 @@ myapp.controller('NewEditController', ['$scope','localStorageService','getDate',
     }]);
 
 
-myapp.controller('homeController', ['$scope', function ($scope) {
+myapp.controller('homeController', ['$scope', '$http', function ($scope, $http) {
+        $http.get('records.json').success(function (data) {
+            $scope.records = data;
+        });
 
+        $scope.countChecks = function () {
+            $scope.count = 0;
+            var checkboxes = document.getElementsByClassName('checkboxes');
+            for (var i = 0; i < checkboxes.length; i++) {
+                if (checkboxes[i].checked) {
+                    $scope.count++;
+                }
+            }
+            
+        };
     }]);
 
 
 //date picker code
 
-myapp.controller('AppCtrl', ['$scope','getDate', function ($scope,getDate) {
+myapp.controller('AppCtrl', ['$scope', 'getDate', function ($scope, getDate) {
         $scope.myDate = new Date();
         $scope.minDate = new Date(
                 $scope.myDate.getFullYear(),
@@ -98,8 +111,8 @@ myapp.controller('AppCtrl', ['$scope','getDate', function ($scope,getDate) {
             var day = date.getDay();
             return day === 0 || day === 6;
         };
-        $scope.$watch('myDate',function(){
+        $scope.$watch('myDate', function () {
             getDate.date = $scope.myDate;
         });
-        
+
     }]);

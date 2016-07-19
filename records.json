@@ -1,0 +1,33 @@
+[
+    {
+        "name": "Comedy",
+        "author": "Goe",
+        "category": "comedy",
+        "status": "published"
+    },
+    {
+        "name": "Drama",
+        "author": "john",
+        "category": "Drama",
+        "status": "pending"
+    },
+    {
+        "name": "Science",
+        "author": "steve",
+        "category": "Science",
+        "status": "published"
+    },
+    {
+        "name": "Biology",
+        "author": "Dr.ben",
+        "category": "Biology",
+        "status": "Reviewed"
+    },
+    {
+        "name": "Physics",
+        "author": "James",
+        "category": "Physics",
+        "status": "published"
+    }
+
+]

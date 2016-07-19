@@ -13,6 +13,7 @@ $lightsimon: #FFADA6;
 $darksimon: #D28169;
 $bluishGrey:#99CCCC;
 $darkbabyblue: #A6D0FF;
+$green: #00D334;
 
 p,h2{
     margin: 0;
@@ -25,6 +26,8 @@ body{
     top: 0 !important;
 
 }
+
+
 header{
     font-size: 1.4em;
     padding: 20px;
@@ -53,16 +56,17 @@ section{
     background-color: $backgroundGrey;
     padding: 20px 10px;
 }
-section#newEdit{
-    height: 700px;
 
+/*rules for newEdit page*/
+section#newEdit{
+    height: 650px;
     div.insert-partition{
         width: 45%;
         margin: 20px auto 0;
         background-color: #fff;
         padding: 20px 10px;
         box-shadow: 0 0 10px #ccc;
-        height: 80px;
+        height: 65px;
         overflow: hidden;
         -webkit-transition: all 0.5s ease-in-out;
         -moz-transition: all 0.5s ease-in-out;
@@ -72,7 +76,7 @@ section#newEdit{
         h2{
             color: $bluishGrey;
             text-align: center;
-
+            font-size: 22px;
         }
         span{
             display: block;
@@ -103,7 +107,7 @@ section#newEdit{
             display:block;
             height: 50px;
             width: 50px;
-            background-color: $darksimon;
+            background-color: $green;
             border-radius: 100%;
             margin: 5px auto;
             -webkit-box-shadow: 0 0 8px #ccc;
@@ -119,21 +123,7 @@ section#newEdit{
 
             }
         }
-        ::-webkit-input-placeholder {
-            color: $bluishGrey;
-        }
 
-        :-moz-placeholder { /* Firefox 18- */
-            color: $bluishGrey;  
-        }
-
-        ::-moz-placeholder {  /* Firefox 19+ */
-            color: $bluishGrey;  
-        }
-
-        :-ms-input-placeholder {  
-            color: $bluishGrey;  
-        }
     }
     div.insert-partition:not(:first-of-type){
         input{
@@ -144,6 +134,7 @@ section#newEdit{
     }
 }
 
+/*rules for buttons section*/
 section.buttons{
     background-color: $backgroundGrey;
     div{
@@ -181,6 +172,95 @@ section.buttons{
     }
 }
 
+/*rules for homepage*/
+section#homepage{
+    height: 650px;
+    div.filter{
+        width: 95%;
+        margin: 0 auto;
+        box-shadow: 0 0 10px #ccc;
+        background-color: #fff;
+        padding: 20px;
+        h2{
+            font-size: 19px;
+            color: $mainblue;
+            padding: 0 0 20px 0;
+        }
+
+        input[value]{
+            display: block;
+            float: left;
+            width: 30%;
+            padding:5px;
+            box-sizing: border-box;
+            margin: 5px 15px 5px 0;    
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom:1px solid $bluishGrey;
+        }
+        div.datepickerdemoBasicUsage{
+            width: 30%;
+            float: left;
+            margin: 5px 15px 5px 0;
+            button{
+                padding-top: 0;
+                padding-bottom: 0;
+                height: 36px;
+            }
+        }
+    }
+
+    div.table{
+        width: 95%;
+        margin: 20px auto 0;
+        box-shadow: 0 0 10px #ccc;
+        background-color: #fff;
+        padding: 20px;
+        h2{
+            font-size: 19px;
+            color: $mainblue;
+            padding: 0 0 20px 0;
+        }
+        div{
+            background-color: $darksimon;
+            width:100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            span#selectedItems{
+                color:#FFF;
+                font-size: 16px;
+            }
+            a{
+                display: block;
+                float:right;
+                color:#fff;
+                font-size: 16px;
+                padding-left: 10px;
+                cursor: pointer;
+            }
+        }
+        table{
+            width:100%;
+            tr:first-of-type{
+                td{
+                    color:$darksimon;
+                    font-weight: 600;
+                }
+            }
+            tr{
+                td{
+                    padding: 10px 0;
+                    border-bottom: 1px solid #ccc;
+                    width: 20%;
+                    text-transform: capitalize;
+                }
+            }
+        }
+    }
+}
+
+
 /*datepicker rules*/
 .datepickerdemoBasicUsage {
     width: 312px;
@@ -209,4 +289,22 @@ h2:focus{
 }
 .md-datepicker-expand-triangle{
     margin-top: 10px;
+}
+
+
+/*rules for placeholders*/
+::-webkit-input-placeholder {
+    color: $bluishGrey;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+    color: $bluishGrey;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+    color: $bluishGrey;  
+}
+
+:-ms-input-placeholder {  
+    color: $bluishGrey;  
 }

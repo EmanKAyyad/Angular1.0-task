@@ -1,6 +1,6 @@
 <header ng-controller="headerController">
     <div>
-        <a><span class="glyphicon glyphicon-menu-hamburger"></span></a>
+        <a href="#/"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
         <span id="title">data import</span>
     </div>
     <div>
@@ -8,6 +8,53 @@
     </div>
     <p class="clearfix"></p>
 </header>
-<section id="newEdit">
-    
+
+<section  ng-controller="homeController"  id="homepage">
+    <div class="filter">
+        <h2>Filter</h2>
+        <input type="text" value="name" ng-model="name.name"  placeholder="Name"/>
+        <input type="text" value="author" ng-model="author.author" placeholder="Author"/>
+        <input type="text" value="category" ng-model="category.category" placeholder="Category"/>
+        <input type="text" value="state" ng-model="state.state" placeholder="State"/>
+        <div ng-controller="AppCtrl" style="padding: 5px 0;" ng-cloak="" class="datepickerdemoBasicUsage" ng-app="MyApp">
+            <md-content>
+                <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
+            </md-content>
+        </div>
+        <p class="clearfix"></p>
+    </div>
+
+    <div class="table">
+        <h2>Imports</h2>
+        <div>
+            <span id="selectedItems">{{count}} items selected</span>
+            <a><span class="glyphicon glyphicon-option-vertical"></span></a>
+            <a><span class="glyphicon glyphicon-print"></span></a>
+            
+        </div>
+        <table>
+            <tr>
+                <td></td>
+                <td>name</td>
+                <td>author</td>
+                <td>category</td>
+                <td>status</td>             
+            </tr>
+            <tr ng-repeat="record in records | filter: name | filter: author| filter: category| filter: state">
+                <td><input class="checkboxes" ng-click="countChecks()" type="checkbox"/></td>
+                <td>{{record.name}}</td>
+                <td>{{record.author}}</td>
+                <td>{{record.category}}</td>
+                <td>{{record.status}}</td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+
+<section class="buttons">
+    <div>
+        <a id="pencil" href="#/newEdit"><span class="glyphicon glyphicon-pencil"></span></a>
+        <p class="clearfix"></p>
+    </div>
 </section>
