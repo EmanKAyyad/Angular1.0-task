@@ -20057,6 +20057,8 @@ section#homepage {
       border-left: none;
       border-right: none;
       border-bottom: 1px solid #99CCCC; }
+      section#homepage div.filter input[value]:focus {
+        outline: none; }
     section#homepage div.filter div.datepickerdemoBasicUsage {
       width: 30%;
       float: left;
@@ -20140,5 +20142,21 @@ h2:focus {
 
 :-ms-input-placeholder {
   color: #99CCCC; }
+
+/*rules to animate table after filters*/
+.ng-leave.ng-leave-active,
+.ng-enter {
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+  height: 0;
+  overflow: hidden; }
+
+.ng-enter.ng-enter-active,
+.ng-leave {
+  opacity: 1;
+  height: 43px; }
 
 /*# sourceMappingURL=myCss.css.map */

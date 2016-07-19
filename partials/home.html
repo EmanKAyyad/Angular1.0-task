@@ -15,7 +15,7 @@
         <input type="text" value="name" ng-model="name.name"  placeholder="Name"/>
         <input type="text" value="author" ng-model="author.author" placeholder="Author"/>
         <input type="text" value="category" ng-model="category.category" placeholder="Category"/>
-        <input type="text" value="state" ng-model="state.state" placeholder="State"/>
+        <input type="text" value="state" ng-model="status.status" placeholder="State"/>
         <div ng-controller="AppCtrl" style="padding: 5px 0;" ng-cloak="" class="datepickerdemoBasicUsage" ng-app="MyApp">
             <md-content>
                 <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
@@ -40,7 +40,7 @@
                 <td>category</td>
                 <td>status</td>             
             </tr>
-            <tr ng-repeat="record in records | filter: name | filter: author| filter: category| filter: state">
+            <tr ng-animate="'animate'"  ng-repeat="record in records | filter: name | filter: author| filter: category| filter: status">
                 <td><input class="checkboxes" ng-click="countChecks()" type="checkbox"/></td>
                 <td>{{record.name}}</td>
                 <td>{{record.author}}</td>

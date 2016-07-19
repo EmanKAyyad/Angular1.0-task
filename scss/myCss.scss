@@ -24,7 +24,6 @@ body{
     font-family: sans-serif;
     position: relative !important;
     top: 0 !important;
-
 }
 
 
@@ -188,6 +187,7 @@ section#homepage{
         }
 
         input[value]{
+            
             display: block;
             float: left;
             width: 30%;
@@ -198,6 +198,10 @@ section#homepage{
             border-left: none;
             border-right: none;
             border-bottom:1px solid $bluishGrey;
+            
+            &:focus{
+                outline: none;
+            }
         }
         div.datepickerdemoBasicUsage{
             width: 30%;
@@ -307,4 +311,23 @@ h2:focus{
 
 :-ms-input-placeholder {  
     color: $bluishGrey;  
+}
+
+/*rules to animate table after filters*/
+
+.ng-leave.ng-leave-active,
+.ng-enter {
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+  height: 0;
+  overflow:hidden;
+}
+
+.ng-enter.ng-enter-active,
+.ng-leave {
+  opacity: 1;
+  height: 43px;
 }
