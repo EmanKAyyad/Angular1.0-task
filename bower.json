@@ -24,6 +24,7 @@
     "angular-aria": "^1.5.7",
     "angular-messages": "^1.5.7",
     "angular-sanitize": "^1.5.7",
-    "jquery": "^3.1.0"
+    "jquery": "^3.1.0",
+    "angular-local-storage": "^0.2.7"
   }
 }

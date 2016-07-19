@@ -22,7 +22,7 @@ body{
     margin: 20px auto 0;
     font-family: sans-serif;
     position: relative !important;
-        top: 0 !important;
+    top: 0 !important;
 
 }
 header{
@@ -54,29 +54,69 @@ section{
     padding: 20px 10px;
 }
 section#newEdit{
+    height: 700px;
+
     div.insert-partition{
-        width: 50%;
+        width: 45%;
         margin: 20px auto 0;
         background-color: #fff;
         padding: 20px 10px;
         box-shadow: 0 0 10px #ccc;
+        height: 80px;
+        overflow: hidden;
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
 
         h2{
             color: $bluishGrey;
             text-align: center;
-        }
 
+        }
+        span{
+            display: block;
+            margin: 5px 0 10;
+            text-align: center;
+            color: #ccc;      
+        }
         input{
             color: $mainblue;
-            width: 70%;
             display: block;
             margin: 0 auto;
             border: none;
             border-bottom: 1px solid $bluishGrey;
             background-color: #fff;
-            padding:20px 0;
+            padding:15px 0;
+            &:first-of-type:not(.md-datepicker-input){
+                margin-top: 10px;
+            }
             &:focus{
-                outline-color: $bluishGrey;
+                outline:none;
+            }
+            &:not(.md-datepicker-input){
+                width: 312px;
+            }
+        }
+        a{
+            cursor: pointer;
+            display:block;
+            height: 50px;
+            width: 50px;
+            background-color: $darksimon;
+            border-radius: 100%;
+            margin: 5px auto;
+            -webkit-box-shadow: 0 0 8px #ccc;
+            -moz-box-shadow: 0 0 8px #ccc;
+            -o-box-shadow: 0 0 8px #ccc;
+            box-shadow: 0 0 8px #ccc;
+            text-decoration:none;
+
+            span{
+                color: #fff;
+                font-size: 25px;
+                line-height: 46px
+
             }
         }
         ::-webkit-input-placeholder {
@@ -95,18 +135,67 @@ section#newEdit{
             color: $bluishGrey;  
         }
     }
+    div.insert-partition:not(:first-of-type){
+        input{
+            margin-top: 120px !important;
+            margin-bottom: 120px !important;
+        }
+
+    }
 }
 
+section.buttons{
+    background-color: $backgroundGrey;
+    div{
+        a{
+            display:block;
+            height: 50px;
+            width: 50px;
+            background-color: $darksimon;
+            border-radius: 100%;
+            margin: 5px 10px;
+            -webkit-box-shadow: 0 0 8px #ccc;
+            -moz-box-shadow: 0 0 8px #ccc;
+            -o-box-shadow: 0 0 8px #ccc;
+            box-shadow: 0 0 8px #ccc;
+            text-decoration:none;
+            &#backBtn{
+
+                float: left;
+                span{
+                    margin-left: -5px;
+                }
+            }
+            &#pencil{
+                float: right;
+            }
+            span{
+                color: #fff;
+                font-size: 25px;
+                line-height: 46px;
+                display: block;
+                text-align: center;
+
+            }
+        }
+    }
+}
 
 /*datepicker rules*/
 .datepickerdemoBasicUsage {
-    width: 100%;
+    width: 312px;
     margin: 0 auto;
-
-
+    input{
+        width: 60%;
+    }
 }
 .datepickerdemoBasicUsage md-content {
-    padding-left: 10px;
+    md-datepicker{
+        button.md-datepicker-button.md-icon-button.md-button.md-ink-ripple{
+            padding-left: 0;
+            margin-left: -7px;
+        }
+    }
 }
 .datepickerdemoBasicUsage .validation-messages {
     font-size: 12px;
@@ -114,4 +203,10 @@ section#newEdit{
     margin: 10px 0 0 25px; }
 .md-datepicker-input-container{
     border-bottom: none;
+}
+h2:focus{
+    outline: none;
+}
+.md-datepicker-expand-triangle{
+    margin-top: 10px;
 }

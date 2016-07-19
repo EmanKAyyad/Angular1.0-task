@@ -19946,44 +19946,110 @@ section {
   background-color: #fafafa;
   padding: 20px 10px; }
 
-section#newEdit div.insert-partition {
-  width: 50%;
-  margin: 20px auto 0;
-  background-color: #fff;
-  padding: 20px 10px;
-  box-shadow: 0 0 10px #ccc; }
-  section#newEdit div.insert-partition h2 {
-    color: #99CCCC;
-    text-align: center; }
-  section#newEdit div.insert-partition input {
-    color: #244366;
-    width: 70%;
-    display: block;
-    margin: 0 auto;
-    border: none;
-    border-bottom: 1px solid #99CCCC;
+section#newEdit {
+  height: 700px; }
+  section#newEdit div.insert-partition {
+    width: 45%;
+    margin: 20px auto 0;
     background-color: #fff;
-    padding: 20px 0; }
-    section#newEdit div.insert-partition input:focus {
-      outline-color: #99CCCC; }
-  section#newEdit div.insert-partition ::-webkit-input-placeholder {
-    color: #99CCCC; }
-  section#newEdit div.insert-partition :-moz-placeholder {
-    /* Firefox 18- */
-    color: #99CCCC; }
-  section#newEdit div.insert-partition ::-moz-placeholder {
-    /* Firefox 19+ */
-    color: #99CCCC; }
-  section#newEdit div.insert-partition :-ms-input-placeholder {
-    color: #99CCCC; }
+    padding: 20px 10px;
+    box-shadow: 0 0 10px #ccc;
+    height: 80px;
+    overflow: hidden;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out; }
+    section#newEdit div.insert-partition h2 {
+      color: #99CCCC;
+      text-align: center; }
+    section#newEdit div.insert-partition span {
+      display: block;
+      margin: 5px 0 10;
+      text-align: center;
+      color: #ccc; }
+    section#newEdit div.insert-partition input {
+      color: #244366;
+      display: block;
+      margin: 0 auto;
+      border: none;
+      border-bottom: 1px solid #99CCCC;
+      background-color: #fff;
+      padding: 15px 0; }
+      section#newEdit div.insert-partition input:first-of-type:not(.md-datepicker-input) {
+        margin-top: 10px; }
+      section#newEdit div.insert-partition input:focus {
+        outline: none; }
+      section#newEdit div.insert-partition input:not(.md-datepicker-input) {
+        width: 312px; }
+    section#newEdit div.insert-partition a {
+      cursor: pointer;
+      display: block;
+      height: 50px;
+      width: 50px;
+      background-color: #D28169;
+      border-radius: 100%;
+      margin: 5px auto;
+      -webkit-box-shadow: 0 0 8px #ccc;
+      -moz-box-shadow: 0 0 8px #ccc;
+      -o-box-shadow: 0 0 8px #ccc;
+      box-shadow: 0 0 8px #ccc;
+      text-decoration: none; }
+      section#newEdit div.insert-partition a span {
+        color: #fff;
+        font-size: 25px;
+        line-height: 46px; }
+    section#newEdit div.insert-partition ::-webkit-input-placeholder {
+      color: #99CCCC; }
+    section#newEdit div.insert-partition :-moz-placeholder {
+      /* Firefox 18- */
+      color: #99CCCC; }
+    section#newEdit div.insert-partition ::-moz-placeholder {
+      /* Firefox 19+ */
+      color: #99CCCC; }
+    section#newEdit div.insert-partition :-ms-input-placeholder {
+      color: #99CCCC; }
+  section#newEdit div.insert-partition:not(:first-of-type) input {
+    margin-top: 120px !important;
+    margin-bottom: 120px !important; }
+
+section.buttons {
+  background-color: #fafafa; }
+  section.buttons div a {
+    display: block;
+    height: 50px;
+    width: 50px;
+    background-color: #D28169;
+    border-radius: 100%;
+    margin: 5px 10px;
+    -webkit-box-shadow: 0 0 8px #ccc;
+    -moz-box-shadow: 0 0 8px #ccc;
+    -o-box-shadow: 0 0 8px #ccc;
+    box-shadow: 0 0 8px #ccc;
+    text-decoration: none; }
+    section.buttons div a#backBtn {
+      float: left; }
+      section.buttons div a#backBtn span {
+        margin-left: -5px; }
+    section.buttons div a#pencil {
+      float: right; }
+    section.buttons div a span {
+      color: #fff;
+      font-size: 25px;
+      line-height: 46px;
+      display: block;
+      text-align: center; }
 
 /*datepicker rules*/
 .datepickerdemoBasicUsage {
-  width: 100%;
+  width: 312px;
   margin: 0 auto; }
+  .datepickerdemoBasicUsage input {
+    width: 60%; }
 
-.datepickerdemoBasicUsage md-content {
-  padding-left: 10px; }
+.datepickerdemoBasicUsage md-content md-datepicker button.md-datepicker-button.md-icon-button.md-button.md-ink-ripple {
+  padding-left: 0;
+  margin-left: -7px; }
 
 .datepickerdemoBasicUsage .validation-messages {
   font-size: 12px;
@@ -19992,5 +20058,11 @@ section#newEdit div.insert-partition {
 
 .md-datepicker-input-container {
   border-bottom: none; }
+
+h2:focus {
+  outline: none; }
+
+.md-datepicker-expand-triangle {
+  margin-top: 10px; }
 
 /*# sourceMappingURL=myCss.css.map */

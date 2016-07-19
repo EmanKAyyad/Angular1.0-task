@@ -9,17 +9,38 @@
     <p class="clearfix"></p>
 </header>
 <section id="newEdit" ng-controller="NewEditController">
-    <div ng-click="showPartition()"  class="insert-partition">
-        <h2 >General information</h2>
-        <input type="text" value="name" ng-model="name" ng-show="{{flag}}" placeholder="Article name"/>
-        <input type="text" value="author" ng-model="author" placeholder="Author name"/>
-        <input type="text" value="category" ng-model="category" placeholder="Article category"/>
-        <input type="text" value="state" ng-model="state" placeholder="Article state"/>
-        <div ng-controller="AppCtrl" style="padding: 40px;" ng-cloak="" class="datepickerdemoBasicUsage" ng-app="MyApp">
-            <md-content>
-                <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
-            </md-content>
-        </div>
+    <div ng-animate="'animate'"  class="insert-partition">
+        <h2  ng-click="toggle($event)" >General information</h2>
+        <span ng-hide="lamp" > {{name}}  {{author}}  {{category}}  {{state}}</span>
+        <form>
+            <input type="text" value="name" ng-model="name"  placeholder="Article name"/>
+            <input type="text" value="author" ng-model="author" placeholder="Author name"/>
+            <input type="text" value="category" ng-model="category" placeholder="Article category"/>
+            <input type="text" value="state" ng-model="state" placeholder="Article state"/>
+            <div ng-controller="AppCtrl" style="padding: 15px 0;" ng-cloak="" class="datepickerdemoBasicUsage" ng-app="MyApp">
+                <md-content>
+                    <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
+                </md-content>
+            </div>
+            <a ng-click="newEditRecord()"><span class="glyphicon glyphicon-ok"></span></a>
+        </form>
+    </div>
+    <div ng-animate="'animate'"  class="insert-partition">
+        <h2  ng-click="toggle($event)" >Description</h2>
+        <input type="text" value="description" ng-model="Description"  placeholder="Description"/>
+        <a><span class="glyphicon glyphicon-ok"></span></a>
+    </div>
+    <div ng-animate="'animate'"  class="insert-partition">
+        <h2  ng-click="toggle($event)" >Additional Information</h2>
+        <input type="text" value="Additional Information" ng-model="info"  placeholder="Additional Information"/>
+        <a><span class="glyphicon glyphicon-ok"></span></a>
     </div>
     <p class="clearfix"></p>
+</section>
+<section class="buttons">
+    <div>
+        <a id="backBtn" href="#/"><span class="glyphicon glyphicon-backward"></span></a>
+        <a id="pencil"><span class="glyphicon glyphicon-pencil"></span></a>
+        <p class="clearfix"></p>
+    </div>
 </section>
