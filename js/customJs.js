@@ -8,13 +8,16 @@ myapp.config(function (localStorageServiceProvider) {
             .setNotify(true, true);
 });
 
-
 myapp.config(function ($routeProvider) {
     $routeProvider
 
             .when('/', {
                 templateUrl: 'partials/home.html',
                 controller: 'homeController'
+            })
+            .when('/newEdit/:num', {
+                templateUrl: 'partials/NewEdit.html',
+                controller: 'NewEditController'
             })
             .when('/newEdit', {
                 templateUrl: 'partials/NewEdit.html',
@@ -24,7 +27,6 @@ myapp.config(function ($routeProvider) {
 });
 
 // getdate
-
 myapp.service('getDate', function () {
     this.date = '';
 });
@@ -36,7 +38,7 @@ myapp.controller('headerController', ['$scope', '$route', '$log', function ($sco
         };
     }]);
 
-myapp.controller('NewEditController', ['$scope', 'localStorageService', 'getDate', function ($scope, localStorageService, getDate) {
+myapp.controller('NewEditController', ['$scope', 'localStorageService', 'getDate', '$routeParams', '$http', function ($scope, localStorageService, getDate, $routeParams, $http) {
 
         $scope.lamp = false;
         $scope.mydate = getDate.date;
@@ -63,8 +65,8 @@ myapp.controller('NewEditController', ['$scope', 'localStorageService', 'getDate
                     partition.style.width = "50%";
                 }
             }
-
         };
+
 
         $scope.newEditRecord = function () {
             localStorageService.set('name', $scope.name);
@@ -72,12 +74,30 @@ myapp.controller('NewEditController', ['$scope', 'localStorageService', 'getDate
             localStorageService.set('category', $scope.category);
             localStorageService.set('state', $scope.state);
             localStorageService.set('date', $scope.mydate);
-            console.log('done');
+//            console.log('done');
         };
+
+        if ($routeParams.num) {
+            $scope.fillInputs = function () {
+
+                var index = $routeParams.num;
+                var inputs = document.getElementsByClassName('generalinfo');
+                $http.get('records.json').success(function (data) {
+                    $scope.records = data;
+                    inputs[0].value = $scope.records[index].valueOf('name');
+                    inputs[1].value = $scope.records[index].valueOf('author');
+                    inputs[2].value = $scope.records[index].valueOf('category');
+                    inputs[3].value = $scope.records[index].valueOf('status');
+                });
+            };
+            console.dir(inputs[0].value);
+             $scope.fillInputs();
+        };
+       
     }]);
 
+myapp.controller('homeController', ['$scope', '$http', '$window', function ($scope, $http, $window) {
 
-myapp.controller('homeController', ['$scope', '$http', function ($scope, $http) {
         $http.get('records.json').success(function (data) {
             $scope.records = data;
         });
@@ -90,7 +110,23 @@ myapp.controller('homeController', ['$scope', '$http', function ($scope, $http) 
                     $scope.count++;
                 }
             }
-            
+        };
+
+        $scope.AddEdit = function () {
+            if ($scope.count === 1) {
+                var checkboxes = document.getElementsByClassName('checkboxes');
+
+                for (var i = 0; i < checkboxes.length; i++) {
+                    if (checkboxes[i].checked) {
+                        var Sendme = checkboxes[i].parentNode.getAttribute('data-index');
+                    }
+                }
+                $window.location.href = "index.html#/newEdit/" + Sendme;
+                console.log('done');
+            }
+            else {
+                $window.location.href = "index.html#/newEdit";
+            }
         };
     }]);
 

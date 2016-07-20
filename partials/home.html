@@ -30,7 +30,7 @@
             <span id="selectedItems">{{count}} items selected</span>
             <a><span class="glyphicon glyphicon-option-vertical"></span></a>
             <a><span class="glyphicon glyphicon-print"></span></a>
-            
+
         </div>
         <table>
             <tr>
@@ -40,8 +40,8 @@
                 <td>category</td>
                 <td>status</td>             
             </tr>
-            <tr ng-animate="'animate'"  ng-repeat="record in records | filter: name | filter: author| filter: category| filter: status">
-                <td><input class="checkboxes" ng-click="countChecks()" type="checkbox"/></td>
+            <tr ng-animate="'animate'"   ng-repeat="record in records| filter: name | filter: author| filter: category| filter: status">
+                <td data-index = {{$index}} ><input class="checkboxes" ng-click="countChecks()" type="checkbox"/></td>
                 <td>{{record.name}}</td>
                 <td>{{record.author}}</td>
                 <td>{{record.category}}</td>
@@ -49,12 +49,12 @@
             </tr>
         </table>
     </div>
+    <section class="buttons">
+        <div>
+            <a  ng-click ="AddEdit()" id="pencil" ><span class="glyphicon glyphicon-pencil"></span></a>
+            <p class="clearfix"></p>
+        </div>
+    </section>
 </section>
 
 
-<section class="buttons">
-    <div>
-        <a id="pencil" href="#/newEdit"><span class="glyphicon glyphicon-pencil"></span></a>
-        <p class="clearfix"></p>
-    </div>
-</section>

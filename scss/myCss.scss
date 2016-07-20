@@ -53,17 +53,17 @@ header span{
 
 section{
     background-color: $backgroundGrey;
-    padding: 20px 10px;
+    padding: 20px 0;
 }
 
 /*rules for newEdit page*/
 section#newEdit{
-    height: 650px;
+    height: 680px;
     div.insert-partition{
         width: 45%;
         margin: 20px auto 0;
         background-color: #fff;
-        padding: 20px 10px;
+        padding: 20px 0;
         box-shadow: 0 0 10px #ccc;
         height: 65px;
         overflow: hidden;
@@ -173,7 +173,7 @@ section.buttons{
 
 /*rules for homepage*/
 section#homepage{
-    height: 650px;
+    height: 680px;
     div.filter{
         width: 95%;
         margin: 0 auto;
@@ -216,8 +216,9 @@ section#homepage{
     }
 
     div.table{
+        z-index: 5;
         width: 95%;
-        margin: 20px auto 0;
+        margin: 20px auto 10px;
         box-shadow: 0 0 10px #ccc;
         background-color: #fff;
         padding: 20px;

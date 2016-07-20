@@ -13,10 +13,10 @@
         <h2  ng-click="toggle($event)" >General information</h2>
         <span ng-hide="lamp" > {{name}}  {{author}}  {{category}}  {{state}}</span>
 
-            <input type="text" value="name" ng-model="name"  placeholder="Article name"/>
-            <input type="text" value="author" ng-model="author" placeholder="Author name"/>
-            <input type="text" value="category" ng-model="category" placeholder="Article category"/>
-            <input type="text" value="state" ng-model="state" placeholder="Article state"/>
+            <input class="generalinfo" type="text" value="name" ng-model="name"  placeholder="Article name"/>
+            <input class="generalinfo" type="text" value="author" ng-model="author" placeholder="Author name"/>
+            <input class="generalinfo" type="text" value="category" ng-model="category" placeholder="Article category"/>
+            <input class="generalinfo" type="text" value="state" ng-model="state" placeholder="Article state"/>
             <div ng-controller="AppCtrl" style="padding: 15px 0;" ng-cloak="" class="datepickerdemoBasicUsage" ng-app="MyApp">
                 <md-content>
                     <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
